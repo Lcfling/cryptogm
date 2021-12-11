@@ -11,7 +11,7 @@ import (
 	"crypto/subtle"
 	"errors"
 	"fmt"
-	"github.com/cetcxinlian/cryptogm/x509"
+	"github.com/Lcfling/cryptogm/x509"
 	"io"
 	"sync/atomic"
 )
@@ -42,6 +42,7 @@ func (c *Conn) serverHandshakeGM() error {
 	}
 	isResume, err := hs.readClientHello()
 	if err != nil {
+		fmt.Println("readClientHello error:", err)
 		return err
 	}
 
